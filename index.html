@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unfinished March: Post-1965</title>
+    <style>
+        :root {
+            --primary-yellow: #DAA520; 
+            --dark-yellow: #B8860B;
+            --text-main: #222222;
+            --text-light: #555555;
+            --bg-body: #ffffff;
+            --bg-nav: #f9f9f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background-color: var(--bg-nav);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary-yellow);
+            border-bottom: 2px solid var(--primary-yellow);
+        }
+
+        /* Content Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        section {
+            padding-top: 5rem; /* Offsets the sticky nav */
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4rem;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .page-title {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            text-align: center;
+            font-weight: normal;
+            margin: 0 0 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-yellow);
+            padding-left: 15px;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--dark-yellow);
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="#intro" class="nav-link active">Introduction</a>
+        <a href="#cultural" class="nav-link">Cultural Power</a>
+        <a href="#intersectional" class="nav-link">Intersectional Activism</a>
+        <a href="#reconstruction" class="nav-link">3rd Reconstruction</a>
+        <a href="#blm" class="nav-link">#BLM</a>
+        <a href="#analysis" class="nav-link">Analysis</a>
+    </nav>
+
+    <main class="container">
+        
+        <h1 class="page-title">The Black Freedom Struggle Post-1965</h1>
+
+        <section id="intro">
+            <h2>Beyond the Ballot</h2>
+            <p>The passage of the Voting Rights Act of 1965 represented the culmination of the southern struggle to eliminate Jim Crow and secure legal enfranchisement. This law was a monumental triumph, but it quickly became clear that simply having the right to vote would not solve systemic poverty, structural racism, and state violence.</p>
+            <p>Following 1965, the Black Freedom movement pivoted dramatically. The geographic center shifted from the rural South to the urban North and West. Ideologically, the focus shifted away from seeking legal integration into mainstream white society, moving instead toward cultural autonomy, intersectional liberation, institutional power, and the dismantling of systemic anti-Black violence.</p>
+        </section>
+
+        <section id="cultural">
+            <h1>Cultural Black Power</h1>
+            <h2>The Shift to Cultural Nationalism</h2>
+            <h3>The Black Arts Movement & Aesthetics</h3>
+            <h3>The Black Campus Movement</h3>
+        </section>
+
+        <section id="intersectional">
+            <h1>Black Feminism & Queer Activism</h1>
+            <h2>Internal Critiques and Intersectionality</h2>
+            <h3>The Black Feminist Tradition</h3>
+            <h3>Queering Civil Rights</h3>
+        </section>
+
+        <section id="reconstruction">
+            <h1>The Third Reconstruction</h1>
+            <h2>Health, Justice, and Mass Mobilization</h2>
+            <h3>Health Rights as Civil Rights</h3>
+            <h3>The "Million" Marches</h3>
+        </section>
+
+        <section id="blm">
+            <h1>#BlackLivesMatter & Abolition</h1>
+            <h2>A New Generation Emerges</h2>
+            <h3>Digital Activism</h3>
+            <h3>Abolitionist Solutions</h3>
+        </section>
+
+        <section id="analysis">
+            <h1>Analysis: Continuation or Major Shift?</h1>
+            <h2>Evaluating the Post-1965 Era</h2>
+            <h3>The Shift</h3>
+            <h3>The Continuation</h3>
+        </section>
+
+    </main>
+
+    <script>
+        // JavaScript to highlight the navigation link based on scroll position
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Adjust offset for the sticky nav
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").includes(current)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
